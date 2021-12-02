@@ -73,8 +73,8 @@ function App() {
             <>
               <Navbar account={dependencies.account} />
               <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/new" element={<New />} />
+                <Route exact path="/oneact" element={<Home />} />
+                <Route exact path="/oneact/new" element={<New />} />
               </Routes>
             </>
           ) : (
