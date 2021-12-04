@@ -14,9 +14,7 @@ const TableCard = ({
   const { dependencies } = useContext(AppContext);
   const { data, account } = dependencies;
   let [checked, setChecked] = useState(status);
-  
-  const [cause, setCause] = useState([]);
-  
+    
   const toggleChecked = async(causeID) => {
     //console.log(causeID);
     await data.methods

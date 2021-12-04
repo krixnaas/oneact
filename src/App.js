@@ -35,10 +35,9 @@ function App() {
     (async function () {
       const web3 = window.web3;
       const networkId = await web3.eth.net.getId();
-      const networkData = OneAct.networks[networkId];
-
+      const networkData = 3; //OneAct.networks[networkId];      
       //console.log(networkData);
-      const data = new web3.eth.Contract(OneAct.abi, networkData.address);
+      const data = new web3.eth.Contract(OneAct.abi, OneAct.address);
       console.log(data);
 
       const [account] = await web3.eth.getAccounts();
@@ -73,8 +72,8 @@ function App() {
             <>
               <Navbar account={dependencies.account} />
               <Routes>
-                <Route exact path="/oneact" element={<Home />} />
-                <Route exact path="/oneact/new" element={<New />} />
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/new" element={<New />} />
               </Routes>
             </>
           ) : (

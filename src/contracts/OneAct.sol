@@ -68,7 +68,7 @@ contract OneAct {
 
     function toggleCause(uint _index) external {
         FundRaiseEvent storage fundRaise = fundRaises[_index]; 
-        //require(msg.sender != fundRaise.creator, "You are not the Owner"); //only if the address is creator address
+        require(msg.sender == fundRaise.creator, "You are not the Owner"); //only if the address is creator address
         fundRaise.status = !fundRaise.status;     
         emit CauseToggle(_index);
     }
